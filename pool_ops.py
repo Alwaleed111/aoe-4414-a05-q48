@@ -21,17 +21,17 @@ w_pool = int(sys.argv[5])
 s = int(sys.argv[6])
 p = int(sys.argv[7])
 
-# Calculate output dimensions
+
 h_out = (h_in-h_pool+2*p)//s+1
 w_out = (w_in-w_pool+2*p)//s+1
-c_out = c_in  # Channel count remains the same for pooling layers
+c_out = c_in  
 
-# Calculate operations
-adds = c_out*h_out*w_out*(h_pool*w_pool-1)  # Adds required for each pooling operation
-muls = 0  # No multiplications needed for average pooling
-divs = c_out*h_out*w_out  # One division per pooled output element
 
-# Output the results
+adds = c_out*h_out*w_out*(h_pool*w_pool-1)  
+muls = 0  
+divs = c_out*h_out*w_out  
+
+
 print(int(c_out))  # output channel count
 print(int(h_out))  # output height count
 print(int(w_out))  # output width count
